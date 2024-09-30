@@ -1,0 +1,52 @@
+/* @import (reference) '~antd/es/style/themes/index'; */
+ 
+.background {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.1) 0,
+    rgba(0, 0, 0, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  border-radius: 5px;
+}
+ 
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+ 
+  .dragBox {
+    width: 100%;
+  }
+ 
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 40px;
+    width: 200px;
+    background: linear-gradient(to right, #f6d365, #fda085);
+    color: #fff;
+    border-radius: 5px;
+    cursor: move;
+    user-select: none;
+    border: 1px dashed transparent;
+ 
+    > span:first-child {
+      flex: 1;
+      width: 0;
+    }
+  }
+  .item.moving{
+    background: transparent;
+    border: 1px dashed #fff;
+    color: transparent;
+  }
+}
