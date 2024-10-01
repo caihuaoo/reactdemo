@@ -3,6 +3,7 @@ import "./App.css";
 import { Select } from "antd";
 
 import DragList from "./componets/DragList";
+import Cesium from "./componets/Cesium";
 
 function App() {
   const demoList = [
@@ -24,6 +25,11 @@ function App() {
           afterDrag={(list) => console.log(list)}
         />
       ),
+    },
+    {
+      label: "Cesium",
+      value: "Cesium",
+      component: <Cesium />,
     },
   ];
 
