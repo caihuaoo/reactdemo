@@ -4,6 +4,7 @@ import { Select } from "antd";
 
 import DragList from "./componets/DragList";
 import Cesium from "./componets/Cesium";
+import ScrollContainer from "./componets/ScrollContainer";
 
 function App() {
   const demoList = [
@@ -30,6 +31,11 @@ function App() {
       label: "Cesium",
       value: "Cesium",
       component: <Cesium />,
+    },
+    {
+      label: "ScrollContainer",
+      value: "ScrollContainer",
+      component: <ScrollContainer />,
     },
   ];
 

@@ -1,0 +1,11 @@
+/* global.css */
+/*
+  主要用于存放less全局变量，如颜色、字体、动画、尺寸等
+*/
+:root {
+  --primary-color: #ff0000;
+
+  /* ScrollContainer */
+  --ScrollContainer-height: 0px;
+  --ScrollContainer-width: 0px;
+}
