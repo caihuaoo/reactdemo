@@ -1,10 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import { Select } from "antd";
-
+import img1 from "@/assets/images/ScrollerContainer/1.jpg";
+import img2 from "@/assets/images/ScrollerContainer/2.jpg";
+import img3 from "@/assets/images/ScrollerContainer/3.jpg";
 import DragList from "./componets/DragList";
 import Cesium from "./componets/Cesium";
 import ScrollContainer from "./componets/ScrollContainer";
+import ParallaxScrolling from "./componets/ParallaxScrolling";
+import ScrollerCard from "./componets/ScrollerCard";
 
 function App() {
   const demoList = [
@@ -35,7 +39,29 @@ function App() {
     {
       label: "ScrollContainer",
       value: "ScrollContainer",
-      component: <ScrollContainer />,
+      component: (
+        <ScrollContainer
+          content={
+            <>
+              <img src={`https://picsum.photos/1600/800?random=1`} />
+              <img src={`https://picsum.photos/1600/800?random=2`} />
+              <img src={`https://picsum.photos/1600/800?random=3`} />
+              <img src={`https://picsum.photos/1600/800?random=4`} />
+              <img src={`https://picsum.photos/1600/800?random=5`} />
+            </>
+          }
+        />
+      ),
+    },
+    {
+      label: "ParallaxScrolling",
+      value: "ParallaxScrolling",
+      component: <ParallaxScrolling />,
+    },
+    {
+      label: "ScrollerCard",
+      value: "ScrollerCard",
+      component: <ScrollerCard />,
     },
   ];
 

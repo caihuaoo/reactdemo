@@ -1,11 +1,8 @@
 //
 import styles from "./index.module.less";
 import { useEffect } from "react";
-import img1 from "@/assets/images/ScrollerContainer/1.jpg";
-import img2 from "@/assets/images/ScrollerContainer/2.jpg";
-import img3 from "@/assets/images/ScrollerContainer/3.jpg";
 
-const ScrollContainer = () => {
+const ScrollContainer = ({ content }) => {
   const handleSizeChange = () => {
     const container =
       document.body.querySelector<HTMLElement>("#scrollContainer");
@@ -32,11 +29,7 @@ const ScrollContainer = () => {
   return (
     <div id="scrollContainer" className={styles.scrollContainer}>
       <div className={styles.vScroll}>
-        <div className={styles.content}>
-          <img src={img1} />
-          <img src={img2} />
-          <img src={img3} />
-        </div>
+        <div className={styles.content}>{content}</div>
       </div>
     </div>
   );
