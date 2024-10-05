@@ -12,16 +12,18 @@ export default function Scroll() {
   };
   useGSAP(
     () => {
-      gsap.utils.toArray("section").forEach((section, i) => {
+      gsap.utils.toArray("section").forEach((section:any, i) => {
         section.bg = section.querySelector(".bg");
 
         // Give the backgrounds some random images
         section.bg.style.backgroundImage = `url(https://picsum.photos/1600/800?random=${i})`;
+        // section.bg.style.backgroundImage = `/public/images/picsum${i}`;
+        
 
         // the first image (i === 0) should be handled differently because it should start at the very top.
         // use function-based values in order to keep things responsive
 
-        const container = document.body.querySelector("#scrollContainer");
+        const container:any= document.body.querySelector("#scrollContainer");
 
         const { offsetHeight } = container || {};
 

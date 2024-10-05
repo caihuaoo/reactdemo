@@ -29,7 +29,7 @@ export default function ScrollCard() {
         }),
         trigger = ScrollTrigger.create({
             start: 0,
-            onUpdate(self) {
+            onUpdate(self:any) {
                 if (self.progress === 1 && self.direction > 0 && !self.wrapping) {
                     wrapForward(self);
                 } else if (self.progress < 1e-5 && self.direction < 0 && !self.wrapping) {

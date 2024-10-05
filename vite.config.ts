@@ -7,7 +7,7 @@ const pathSrc = resolve(__dirname, "src");
 export default defineConfig({
   plugins: [
     react()
-    // ,cesium()
+    ,cesium()
   ],
   resolve: {
     alias: {

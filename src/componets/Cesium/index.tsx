@@ -1,46 +1,29 @@
 import * as Cesium from "cesium";
 import styles from "./index.module.less";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import FlyToPos from "./components/FlyToPos";
+import CreateChinaMap from "./components/CreateChinaMap";
+import { initMap, changeBaseMap } from "./CesiumMap";
 
 function App() {
+  const [viewer, setViewer] = useState<Cesium.Viewer>();
+
   useEffect(() => {
-    // 初始化Cesium
-    // token
-    Cesium.Ion.defaultAccessToken =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2NTEzZGU2NS05MjhhLTRhNzctOThmMS00MzM5ZmUzZTdhNTgiLCJpZCI6MjQ1MjQxLCJpYXQiOjE3Mjc3NTkyMDR9.xaZNE2AK9C4EWgia_QtzX7tJ3p8b3eDQrgPVvQfUKpA";
-    // 使用 createWorldTerrainAsync 并等待其完成
-    Cesium.createWorldTerrainAsync()
-      .then((terrainProvider) => {
-        const viewer = new Cesium.Viewer("cesiumContainer", {
-          infoBox: false,
-          terrainProvider: terrainProvider,
-          scene3DOnly: true,
-          selectionIndicator: false,
-          baseLayerPicker: false,
-          timeline:false,
-          navigationHelpButton: false,
-          animation:false,
-          fullscreenButton:false,
-          sceneModePicker:false,
-          geocoder:false,
-          homeButton:false,
-          vrButton:false,
-          navigationInstructionsInitiallyVisible:false,
-          sceneMode: Cesium.SceneMode.SCENE3D,
-      
-          //   terrainProvider: Cesium.createWorldTerrainAsync(),
-        //   imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
-        //     url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
-        //   }),
-         imageryProviderViewModels: [],
-        });
-      })
-      .catch((error) => {
-        console.error("加载地形失败", error);
-      });
+    const _viewer = initMap("cesiumContainer");
+    setViewer(_viewer);
+    changeBaseMap(0);
   }, []);
 
-  return <div id="cesiumContainer" className={styles.cesiumContainer} />;
+
+  return (
+    <div className={styles.cesiumbox}>
+      <div id="cesiumContainer" className={styles.cesiumContainer} />
+      <div className={styles.cesiumTool}>
+        <FlyToPos viewer={viewer} />
+        <CreateChinaMap viewer={viewer} />
+      </div>
+    </div>
+  );
 }
 
 export default App;
