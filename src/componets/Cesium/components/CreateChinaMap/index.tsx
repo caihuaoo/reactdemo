@@ -40,7 +40,6 @@ const ChinaMap = (props: { viewer: Cesium.Viewer }) => {
     if (!viewer) return;
     // 假设已经初始化了Cesium.Viewer实例，名为viewer
     let dataSource = viewer.dataSources.getByName("china")[0];
-    console.log(viewer.dataSources, "dataSources");
 
     if (!dataSource) {
       dataSource = new Cesium.GeoJsonDataSource("china");

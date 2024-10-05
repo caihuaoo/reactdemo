@@ -9,6 +9,7 @@ import Cesium from "./componets/Cesium";
 import ScrollContainer from "./componets/ScrollContainer";
 import ParallaxScrolling from "./componets/ParallaxScrolling";
 import ScrollerCard from "./componets/ScrollerCard";
+import OpenLayer from "./componets/OpenLayer";
 
 function App() {
   const demoList = [
@@ -62,6 +63,11 @@ function App() {
       label: "ScrollerCard",
       value: "ScrollerCard",
       component: <ScrollerCard />,
+    },
+    {
+      label: "OpenLayer",
+      value: "OpenLayer",
+      component: <OpenLayer />,
     },
   ];
 
