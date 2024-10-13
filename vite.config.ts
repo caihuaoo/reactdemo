@@ -14,5 +14,11 @@ export default defineConfig({
       "@": pathSrc,
     },
   },
-
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+      },
+    },
+  },
 })

@@ -9,3 +9,21 @@
   --ScrollContainer-height: 0px;
   --ScrollContainer-width: 0px;
 }
+
+:root {
+  --backgroundcolor: #ffffff;
+  --textcolor: #000000;
+  --bordercolor:#0000003f ;
+}
+
+:root[theme="light"] {
+  --backgroundcolor: #ffffff;
+  --textcolor: #000000;
+  --bordercolor: #0000003f;
+}
+
+:root[theme="dark"] {
+  --backgroundcolor: #282332;
+  --textcolor: #b8b6c0;
+  --bordercolor: #ffffff1e;
+}

@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  p {
+    margin: 0;
+    color: white;
+  }
+  .p_clone {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    .span {
+      --p: 10%;
+      background: linear-gradient(
+        to right,
+        #0000 var(--p) #000 calc(var(--p) + 100px)
+      );
+      color: transparent;
+      animation: identifier 5s linear infinite;
+    }
+
+    @property --p {
+      syntax: "<percentage>";
+      initial-value: 0%;
+      inherits: false;
+    }
+
+    @keyframes identifier {
+      to {
+        --p: 100%;
+      }
+    }
+  }
+}
