@@ -12,7 +12,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@/":  `${__dirname}/src/`,
-      // "cesium": `${__dirname}/public/cesium/Build/Cesium`
     },
   },
   css: {
