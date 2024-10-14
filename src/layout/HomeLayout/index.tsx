@@ -1,19 +1,20 @@
-import React, { Suspense } from "react";
-import { Flex, Layout } from "antd";
+import { ElementType, Suspense } from "react";
+import { Layout } from "antd";
 import HeaderConent from "../../componets/Header";
 import SliderContent from "../../componets/SliderContent";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import styles from "./index.module.less";
 import Loading from "../../componets/Loading";
+import { getComponent } from "@/utils/asyncComponent";
 
 const { Header, Footer, Sider, Content } = Layout;
 
 const HomeLayout = () => {
   const { currentComponent } = useSelector((state: RootState) => state.global);
-  const Component =
-    currentComponent?.path &&
-    React.lazy(() => import(`../../examples/${currentComponent?.path}`));
+
+  const Component = getComponent(currentComponent?.path)
+
   return (
     <Layout className={styles.layout}>
       <Header className={styles.header}>
@@ -26,13 +27,15 @@ const HomeLayout = () => {
         <Content className={styles.content}>
           {currentComponent?.path && (
             <Suspense fallback={<Loading />}>
-              <Component />
+              {Component && <Component />}
             </Suspense>
           )}
         </Content>
       </Layout>
       <Footer className={styles.footer}>
-      <a href="https://beian.miit.gov.cn/" target="_blank" >{'苏ICP备2024131188号'}</a>
+        <a href="https://beian.miit.gov.cn/" target="_blank">
+          {"苏ICP备2024131188号"}
+        </a>
       </Footer>
     </Layout>
   );

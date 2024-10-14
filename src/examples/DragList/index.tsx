@@ -1,4 +1,4 @@
-import DragList from "../../componets/DragList";
+import DragList from "@/componets/DragList";
 
 const App = () => {
   return (

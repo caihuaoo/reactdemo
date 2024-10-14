@@ -1,3 +1,5 @@
+import "@/public/cesium/Build/CesiumUnminified/Widgets/widgets.css";
+
 import * as Cesium from "cesium";
 import styles from "./index.module.less";
 import { useEffect, useState } from "react";

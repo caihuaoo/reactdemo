@@ -24,7 +24,6 @@ const globalSlice = createSlice({
       state.menuList = action.payload;
     },
     setCurrentComponent: (state, action: PayloadAction<MenuItem>) => {
-      console.log(action.payload);
       state.currentComponent = action.payload;
     },
   },

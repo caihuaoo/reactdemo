@@ -251,10 +251,10 @@
     "@babel/helper-validator-identifier" "^7.24.7"
     to-fast-properties "^2.0.0"
 
-"@cesium/engine@^11.0.0":
-  version "11.0.0"
-  resolved "https://registry.npmmirror.com/@cesium/engine/-/engine-11.0.0.tgz"
-  integrity sha512-0z3mJNNly407h3/bAvGoGnjA0ygprkVz32z9x1VNmPXf9AuybKu7Q4wRrChUhC/qsNj3L45kP6KqyDuHSe2bhw==
+"@cesium/engine@^11.1.0":
+  version "11.1.0"
+  resolved "https://registry.npmmirror.com/@cesium/engine/-/engine-11.1.0.tgz"
+  integrity sha512-vrEQAbYQuXt2cMYF9BpBu4Kxu+8uje1CrFHfyI5aNp7gCrUK1RYquldyqT7TDr3YKe7oZMHL+Xeb5Vm8ua6gZQ==
   dependencies:
     "@tweenjs/tween.js" "^25.0.0"
     "@zip.js/zip.js" "^2.7.34"
@@ -272,16 +272,16 @@
     meshoptimizer "^0.21.0"
     pako "^2.0.4"
     protobufjs "^7.1.0"
-    rbush "^4.0.0"
+    rbush "3.0.1"
     topojson-client "^3.1.0"
     urijs "^1.19.7"
 
-"@cesium/widgets@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.npmmirror.com/@cesium/widgets/-/widgets-8.0.0.tgz"
-  integrity sha512-Rnid5BbLBZjwFdbr3lgOwK3fhql/BeEbf5l9ZZE+Zc7V8Fb6wgKM8QmrL+bbJ+BtuiELp+SkNxcF97Ktifxb4g==
+"@cesium/widgets@^8.1.0":
+  version "8.1.0"
+  resolved "https://registry.npmmirror.com/@cesium/widgets/-/widgets-8.1.0.tgz"
+  integrity sha512-WD5eokNfSQmB3oqe97KmdmDefwzooHaMWBm9kE/Af9edyD2j3eQVTrbNhiJ06UIyEjd01U1af2iDOawI9adAgA==
   dependencies:
-    "@cesium/engine" "^11.0.0"
+    "@cesium/engine" "^11.1.0"
     nosleep.js "^0.12.0"
 
 "@ctrl/tinycolor@^3.6.1":
@@ -954,12 +954,12 @@ caniuse-lite@^1.0.30001663:
   integrity sha512-AmE7k4dXiNKQipgn7a2xg558IRqPN3jMQY/rOsbxDhrd0tyChwbITBfiwtnqz8bi2M5mIWbxAYBvk7W7QBUS2g==
 
 cesium@^1.95.0, cesium@^1.95.1:
-  version "1.121.1"
-  resolved "https://registry.npmmirror.com/cesium/-/cesium-1.121.1.tgz"
-  integrity sha512-WpdaGFd8qCOHiE9khV0sWWjCMXAX1U9Aou8MzMC/F0Akp6YqcOk4HLk4LLhZKeOjO/Bh27iTIW2mxEZ5+dtCxg==
+  version "1.122.0"
+  resolved "https://registry.npmmirror.com/cesium/-/cesium-1.122.0.tgz"
+  integrity sha512-zHxF4QMVE9/ukhxvV/UULzytZp5uz0JVjegc+qxfhHtvN3crFbpL6/8frkVrcQ0GTjH6/LT1AcMERj/bNdVYng==
   dependencies:
-    "@cesium/engine" "^11.0.0"
-    "@cesium/widgets" "^8.0.0"
+    "@cesium/engine" "^11.1.0"
+    "@cesium/widgets" "^8.1.0"
 
 chalk@^2.4.2:
   version "2.4.2"
@@ -2043,6 +2043,11 @@ quick-lru@^6.1.1:
   resolved "https://registry.npmmirror.com/quick-lru/-/quick-lru-6.1.2.tgz"
   integrity sha512-AAFUA5O1d83pIHEhJwWCq/RQcRukCkn/NSm2QsTEMle5f2hP0ChI2+3Xb051PZCkLryI/Ir1MVKviT2FIloaTQ==
 
+quickselect@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmmirror.com/quickselect/-/quickselect-2.0.0.tgz"
+  integrity sha512-RKJ22hX8mHe3Y6wH/N3wCM6BWtjaxIyyUIkpHOvfFnxdI4yD4tBXEBKSbriGujF6jnSVkJrffuo6vxACiSSxIw==
+
 quickselect@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmmirror.com/quickselect/-/quickselect-3.0.0.tgz"
@@ -2059,6 +2064,13 @@ rbush@^4.0.0:
   integrity sha512-IP0UpfeWQujYC8Jg162rMNc01Rf0gWMMAb2Uxus/Q0qOFw4lCcq6ZnQEZwUoJqWyUGJ9th7JjwI4yIWo+uvoAQ==
   dependencies:
     quickselect "^3.0.0"
+
+rbush@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npmmirror.com/rbush/-/rbush-3.0.1.tgz"
+  integrity sha512-XRaVO0YecOpEuIvbhbpTrZgoiI6xBlz6hnlr6EHhd+0x9ase6EmeN+hdwwUaJvLcsFFQ8iWVF1GAK1yB0BWi0w==
+  dependencies:
+    quickselect "^2.0.0"
 
 rc-cascader@~3.28.1:
   version "3.28.1"

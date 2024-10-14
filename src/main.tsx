@@ -5,8 +5,6 @@ import "./index.css";
 import store from "./store";
 import { Provider } from "react-redux";
 
-// import './public/cesium/Build/Cesium/Cesium.js'
-import "./public/cesium/Build/CesiumUnminified/Widgets/widgets.css";
 import "./global.css"; // 全局样式
 
 createRoot(document.getElementById("root")!).render(
@@ -16,3 +14,4 @@ createRoot(document.getElementById("root")!).render(
   </Provider>
   // </StrictMode>,
 );
+

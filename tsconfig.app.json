@@ -18,7 +18,13 @@
     "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "@/components/*": ["components/*"], // 映射路径
+      "@/examples/*": ["examples/*"],
+    }
   },
-  "include": ["src"]
+  "include": ["vite.config.ts","src/**/*"]
 }
