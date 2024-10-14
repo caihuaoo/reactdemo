@@ -23,7 +23,7 @@
     "paths": {
       "@/*": ["*"],
       "@/components/*": ["components/*"], // 映射路径
-      "@/examples/*": ["examples/*"],
+      "@/demos/*": ["demos/*"],
     }
   },
   "include": ["vite.config.ts","src/**/*"]

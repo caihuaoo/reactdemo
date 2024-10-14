@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ElementType } from "react";
 
 type MenuItem = {
   key: string;
-  title: string;
+  name: string;
   path: string;
+  component: ElementType;
 };
 
 interface GlobalState {

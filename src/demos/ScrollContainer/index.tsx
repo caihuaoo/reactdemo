@@ -1,6 +1,6 @@
-import ScrollContainer from "../../componets/ScrollContainer";
+import ScrollContainer from "../../components/ScrollContainer";
 
-const App = () => {
+const ScrollContainerDemo = () => {
   return (
       <ScrollContainer
           content={
@@ -16,4 +16,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default ScrollContainerDemo;

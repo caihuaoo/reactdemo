@@ -1,6 +1,6 @@
-import DragList from "@/componets/DragList";
+import DragList from "@/components/DragList";
 
-const App = () => {
+const DragListDemo = () => {
   return (
     <DragList
       list={[
@@ -18,4 +18,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default DragListDemo;

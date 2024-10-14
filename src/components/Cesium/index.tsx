@@ -1,4 +1,4 @@
-import "@/public/cesium/Build/CesiumUnminified/Widgets/widgets.css";
+import "@/public/cesium/Widgets/widgets.css";
 
 import * as Cesium from "cesium";
 import styles from "./index.module.less";

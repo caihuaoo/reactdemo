@@ -1,4 +1,4 @@
-import React, { Component, ElementType } from "react";
+import React, { Component, ElementType } from 'react';
 // importComponent 是使用 import()的函数
 // 定义状态类型时移除 Readonly 或者包含 component 属性
 interface MyState {
@@ -32,18 +32,36 @@ function asyncComponent(importComponent) {
   return AsyncComponent;
 }
 
+function getDemosList() {
+  // 编译时获取所有examples组件 方便运行时获取
+  const components = import.meta.glob('../demos/**/index.tsx', {
+    eager: true,
+    import: 'default',
+  });
+
+  const list = Object.keys(components).map((k) => {
+    const parts = k.split('/');
+    const componentName = parts[parts.length - 2];
+    const name = componentName || '';
+    return {
+      name,
+      path: k,
+    };
+  });
+
+  return list;
+}
+
 // 根据组件名动态获取组件
 function getComponent(name: string) {
   // 编译时获取所有examples组件 方便运行时获取
-  const components = import.meta.glob("../examples/**/index.tsx", {
+  const components = import.meta.glob('../demos/**/index.tsx', {
     eager: true,
-    import: "default",
+    import: 'default',
   });
-  
-  const Component = components[
-    `../examples/${name}/index.tsx`
-  ] as ElementType;
+
+  const Component = components[`../demos/${name}/index.tsx`] as ElementType;
   return Component;
 }
 
-export { asyncComponent, getComponent };
+export { asyncComponent, getComponent, getDemosList };

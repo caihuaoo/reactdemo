@@ -1,17 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./index.module.less";
 import { lazy, useEffect } from "react";
-import { RootState } from "../../store";
+import { RootState } from "@/store";
+import { getDemosList } from "@/utils/asyncComponent";
 
-const _menuList = [
-  { title: "DragList", key: "1", path: "DragList" },
-  { title: "Cesium", key: "2", path: "Cesium" },
-  { title: "ScrollContainer", key: "3", path: "ScrollContainer" },
-  { title: "ParallaxScrolling", key: "4", path: "ParallaxScrolling" },
-  { title: "ScrollerCard", key: "5", path: "ScrollerCard" },
-  { title: "OpenLayer", key: "6", path: "OpenLayer" },
-];
-
+const _menuList = getDemosList();
 const SliderContent = () => {
   const dispatch = useDispatch();
   const { menuList, currentComponent } = useSelector(
@@ -35,11 +28,11 @@ const SliderContent = () => {
             <li
               key={index}
               className={` ${
-                currentComponent?.key === item.key ? styles.active : styles.li
+                currentComponent?.name === item.name ? styles.active : styles.li
               }`}
               onClick={() => selectComponent(item)}
             >
-              {item.title}
+              {item.name}
               <span></span>
             </li>
           ))}
