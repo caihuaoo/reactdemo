@@ -1,4 +1,4 @@
-import React, { Component, ElementType } from 'react';
+import React, { Component, ElementType, lazy } from 'react';
 // importComponent 是使用 import()的函数
 // 定义状态类型时移除 Readonly 或者包含 component 属性
 interface MyState {
@@ -64,4 +64,22 @@ function getComponent(name: string) {
   return Component;
 }
 
-export { asyncComponent, getComponent, getDemosList };
+
+//获取所有路由
+function getHomeRouters(){
+  const views = import.meta.glob('../views/*/*.tsx');
+
+  const list = Object.keys(views).map((k) => {
+    const parts = k.split('/');
+    const componentName = parts[parts.length - 2];
+    const name = componentName || '';
+    return {
+      name,
+      path: k,
+      component: lazy(() => views[k]()), // 使用 lazy 加载组件
+    };
+  });
+  return list
+}
+
+export { asyncComponent, getComponent, getDemosList,getHomeRouters };

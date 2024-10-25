@@ -1,12 +1,15 @@
-import "./App.css";
-import HomeLayout from "./layout/HomeLayout";
+// app.tsx
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import RouterComponent from '@/router'; // 假设 Router 组件位于同一目录下的 Router.tsx 文件中
+import '@/App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <>
-      <HomeLayout />
-    </>
+    <Router>
+      <RouterComponent />
+    </Router>
   );
-}
+};
 
 export default App;
