@@ -19,7 +19,7 @@ const Demo = () => {
     <Layout className={styles.layout}>
       <Sider
         width="15%"
-        className={`${styles.sidzhuer} ${
+        className={`${styles.sider} ${
           isDrawerVisible ? styles.drawer_open : styles.drawer_close
         }`}
       >

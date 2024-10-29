@@ -27,15 +27,19 @@
   .ul_list {
     .ul_list_content {
       border-left: @bordercolor 1px solid;
+      
+      li {
+        margin-left: -1px;
+        border-left: transparent 1px solid;
+        
+      }
 
       .li {
         line-height: 20px;
         padding: 6px 12px;
         cursor: pointer;
-        border-left: transparent 1px solid;
         &:hover {
-          border-left: @textcolor 2px solid;
-          margin-left: -1px;
+          border-left: @textcolor 1px solid;
           opacity: 0.4;
         }
       }
@@ -44,8 +48,7 @@
         line-height: 20px;
         padding: 6px 12px;
         cursor: pointer;
-        border-left: #794dff 2px solid;
-        margin-left: -1px;
+        border-left: #794dff 1px solid;
         color: #794dff;
       }
     }

@@ -22,7 +22,7 @@ const SliderContent = () => {
   return (
     <div className={styles.container}>
       <ul className={styles.ul_list}>
-        <h5>{"示例Demo"}</h5>
+        {/* <h5>{"示例Demo"}</h5> */}
         <ul className={styles.ul_list_content}>
           {menuList.map((item, index) => (
             <li
