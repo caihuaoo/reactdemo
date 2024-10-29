@@ -19,6 +19,7 @@
       width: 18px;
       height: 18px;
       margin-right: 8px;
+      margin-bottom: 4px;
     }
     .title {
       font-size: 1.2rem;
@@ -26,8 +27,17 @@
       font-family: AlimamaAgileVF;
       color: @textcolor;
       height: 18px;
-      line-height: 24px;
+      line-height: 18px;
       font-variation-settings: "wght" 600, "wdth" 125,"slnt" 7.35, "SRIF" 1;
+      background: linear-gradient(to right, #7d7b81 0%, #6c6083 100%) no-repeat;
+      background-size: 0 2px;
+      background-position: right bottom;
+      transition: background-size 0.3s;
+      &:hover {
+        background-position: left bottom;
+        background-size: 100% 2px;
+      }
+
     }
   }
 

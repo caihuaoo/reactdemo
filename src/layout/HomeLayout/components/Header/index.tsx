@@ -8,14 +8,13 @@ import logo from '@/public/imgs/logo.svg';
 
 import { useNavigate } from 'react-router-dom';
 
-
 const title = import.meta.env.SYSTEM_TITLE;
 
 const menuList = [
   {
-    key: 'Home',
-    name: '首页',
-    path: '/Home',
+    key: 'Doc',
+    name: '文档',
+    path: '/Doc',
   },
   {
     key: 'Demo',
@@ -25,8 +24,8 @@ const menuList = [
 ];
 
 const HeaderConent = () => {
-const navigate = useNavigate();
-  
+  const navigate = useNavigate();
+
   const theme = localStorage.getItem('theme') || 'light';
   const onClick = (theme) => {
     localStorage.setItem('theme', theme);
@@ -55,7 +54,7 @@ const navigate = useNavigate();
 
   const menuClick = (e) => {
     const { path } = e || {};
-    navigate(path)
+    navigate(path);
   };
 
   useEffect(() => {
@@ -66,7 +65,9 @@ const navigate = useNavigate();
     <div className={styles.header}>
       <div className={styles.left}>
         <img src={logo} alt="" className={styles.logo} />
-        <label className={styles.title}>{title}</label>
+        <label className={styles.title} onClick={() => navigate('/')}>
+          {title}
+        </label>
       </div>
       <div className={styles.right}>
         {menuList.map((item) => (

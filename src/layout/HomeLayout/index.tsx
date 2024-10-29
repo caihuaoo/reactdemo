@@ -3,7 +3,7 @@ import HeaderConent from './components/Header';
 import styles from './index.module.less';
 import { Outlet } from 'react-router-dom';
 
-const { Header } = Layout;
+const { Header,Footer } = Layout;
 
 const HomeLayout = () => {
   return (
@@ -14,6 +14,11 @@ const HomeLayout = () => {
       <Layout className={styles.layout}>
         <Outlet />
       </Layout>
+      <Footer className={styles.footer}>
+        <a href="https://beian.miit.gov.cn/" target="_blank">
+          {'苏ICP备2024131188号'}
+        </a>
+      </Footer>
     </Layout>
   );
 };
