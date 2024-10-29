@@ -31,6 +31,7 @@ const HeaderConent = () => {
     localStorage.setItem('theme', theme);
     const root = document.documentElement;
     root.setAttribute('theme', theme);
+    
   };
 
   const items: MenuProps['items'] = [
