@@ -28,7 +28,8 @@
       color: @textcolor;
       height: 18px;
       line-height: 18px;
-      font-variation-settings: "wght" 600, "wdth" 125,"slnt" 7.35, "SRIF" 1;
+      cursor: pointer;
+      font-variation-settings: 'wght' 600, 'wdth' 125, 'slnt' 7.35, 'SRIF' 1;
       background: linear-gradient(to right, #7d7b81 0%, #6c6083 100%) no-repeat;
       background-size: 0 2px;
       background-position: right bottom;
@@ -37,7 +38,6 @@
         background-position: left bottom;
         background-size: 100% 2px;
       }
-
     }
   }
 
@@ -45,19 +45,21 @@
     display: flex;
     align-items: center;
 
-    .link{
+    .link {
       margin-right: 24px;
       color: @textcolor;
       font-size: 14px;
       cursor: pointer;
 
-      &:hover{
-        color: #794dff;
+      &:hover {
+        color: #a58df0;
         // text-decoration: underline;
-  
       }
     }
 
+    .active {
+      color: #9475f1;
+    }
 
     span {
       cursor: pointer;

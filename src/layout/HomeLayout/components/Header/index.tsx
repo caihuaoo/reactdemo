@@ -6,7 +6,8 @@ import { useEffect } from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import logo from '@/public/imgs/logo.svg';
 
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { handleCurrentRouter } from '@/utils/handleCurrentRouter';
 
 const title = import.meta.env.SYSTEM_TITLE;
 
@@ -26,12 +27,17 @@ const menuList = [
 const HeaderConent = () => {
   const navigate = useNavigate();
 
+  const location = useLocation();
+
+
+  const currentSrcLocation = handleCurrentRouter(location.pathname);
+  
+  console.log('currentSrcLocation', currentSrcLocation);
   const theme = localStorage.getItem('theme') || 'light';
   const onClick = (theme) => {
     localStorage.setItem('theme', theme);
     const root = document.documentElement;
     root.setAttribute('theme', theme);
-    
   };
 
   const items: MenuProps['items'] = [
@@ -74,7 +80,9 @@ const HeaderConent = () => {
         {menuList.map((item) => (
           <div
             key={item.key}
-            className={styles.link}
+            className={
+              `${styles.link} ${currentSrcLocation === item.key && styles.active}`
+            }
             onClick={() => menuClick(item)}
           >
             {item.name}
