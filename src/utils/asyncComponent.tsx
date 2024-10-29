@@ -67,7 +67,7 @@ function getComponent(name: string) {
 
 //获取所有路由
 function getHomeRouters(){
-  const views = import.meta.glob('../views/*/*.tsx');
+  const views = import.meta.glob('../views/*/*.tsx') as Record<string, () => Promise<{ default: React.ComponentType }>>;
 
   const list = Object.keys(views).map((k) => {
     const parts = k.split('/');

@@ -9,7 +9,7 @@ import logo from '@/public/imgs/logo.svg';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { handleCurrentRouter } from '@/utils/handleCurrentRouter';
 
-const title = import.meta.env.SYSTEM_TITLE;
+const title = import.meta.env.VITE_SYSTEM_TITLE;
 
 const menuList = [
   {
